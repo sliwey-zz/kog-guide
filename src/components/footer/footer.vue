@@ -1,8 +1,9 @@
 <template>
   <footer :class="$style.footer">
     <ul :class="$style.list">
-      <router-link :class="$style.item" tag="li" to="/heroes"><span :class="$style.label">英雄</span></router-link>
-      <router-link :class="$style.item" tag="li" to="/items"><span :class="$style.label">兵器库</span></router-link>
+      <router-link :class="$style.item" tag="li" to="/heroes"><span :class="$style.labelHero">英雄</span></router-link>
+      <router-link :class="$style.item" tag="li" to="/items"><span :class="$style.labelItem">道具</span></router-link>
+      <router-link :class="$style.item" tag="li" to="/items"><span :class="$style.labelRune">符文</span></router-link>
     </ul>
   </footer>
 </template>
@@ -41,6 +42,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.router-link-active{
+
+    .labelItem:before{
+      background-image: url(./item_h.png);
+    }
+  }
 }
 
 .label{
@@ -50,9 +58,34 @@ export default {
     content: '';
     display: block;
     width: 20px;
-    height: 30px;
-    margin: 0 auto;
-    background: url(./icon_hero.png) no-repeat center;
+    height: 20px;
+    margin: 0 auto 3px;
+    background: no-repeat center;
+    background-size: contain;
+  }
+}
+
+.labelHero{
+  composes: label;
+
+  &:before{
+    background-image: url(./hero.png);
+  }
+}
+
+.labelItem{
+  composes: label;
+
+  &:before{
+    background-image: url(./item.png);
+  }
+}
+
+.labelRune{
+  composes: label;
+
+  &:before{
+    background-image: url(./rune.png);
   }
 }
 

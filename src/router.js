@@ -4,6 +4,7 @@ import App from './app';
 import Home from './pages/home/home';
 import Hero from './pages/hero/hero';
 import Item from './pages/item/item';
+import Rune from './pages/rune/rune';
 
 Vue.use(VueRouter);
 
@@ -15,7 +16,8 @@ export default new VueRouter({
       children: [
         { path: 'home', component: Home, alias: '' },
         { path: 'heroes', component: Hero },
-        { path: 'items', component: Item }
+        { path: 'items', component: Item },
+        { path: 'runes', component: Rune }
       ]
     }
   ]
