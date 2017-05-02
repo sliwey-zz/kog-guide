@@ -1,7 +1,7 @@
 <template>
   <header :class="$style.header">
     <h1 :class="$style.title">首页</h1>
-    <button :class="$style.btn" type="button"></button>
+    <button :class="$style.btn" type="button" v-on:click="back()"></button>
   </header>
 </template>
 
@@ -9,6 +9,11 @@
 export default {
   data () {
     return {
+
+    }
+  },
+  methods: {
+    back() {
 
     }
   }

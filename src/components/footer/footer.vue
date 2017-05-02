@@ -1,18 +1,23 @@
 <template>
   <footer :class="$style.footer">
     <ul :class="$style.list">
-      <router-link :class="$style.item" tag="li" to="/heroes"><span :class="$style.labelHero">英雄</span></router-link>
-      <router-link :class="$style.item" tag="li" to="/items"><span :class="$style.labelItem">道具</span></router-link>
-      <router-link :class="$style.item" tag="li" to="/items"><span :class="$style.labelRune">符文</span></router-link>
+      <router-link :class="$style.listItem" tag="li" to="/heroes"><span :class="[isActive === '/heroes' ? $style.heroActive : $style.hero]">英雄</span></router-link>
+      <router-link :class="$style.listItem" tag="li" to="/items"><span :class="[isActive === '/items' ? $style.itemActive : $style.item]">局内道具</span></router-link>
+      <router-link :class="$style.listItem" tag="li" to="/runes"><span :class="[isActive === '/runes' ? $style.runeActive : $style.rune]">符文</span></router-link>
     </ul>
   </footer>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-
+      isActive: this.$route.path
+    }
+  },
+  watch: {
+    $route() {
+      this.isActive = this.$route.path;
     }
   }
 }
@@ -37,21 +42,15 @@ export default {
   height: 100%;
 }
 
-.item{
+.listItem{
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &.router-link-active{
-
-    .labelItem:before{
-      background-image: url(./item_h.png);
-    }
-  }
 }
 
 .label{
+  color: #999;
   font-size: 12px;
 
   &:before{
@@ -65,7 +64,7 @@ export default {
   }
 }
 
-.labelHero{
+.hero{
   composes: label;
 
   &:before{
@@ -73,7 +72,16 @@ export default {
   }
 }
 
-.labelItem{
+.heroActive{
+  composes: label;
+  color: #333;
+
+  &:before{
+    background-image: url(./hero_h.png);
+  }
+}
+
+.item{
   composes: label;
 
   &:before{
@@ -81,11 +89,29 @@ export default {
   }
 }
 
-.labelRune{
+.itemActive{
+  composes: label;
+  color: #333;
+
+  &:before{
+    background-image: url(./item_h.png);
+  }
+}
+
+.rune{
   composes: label;
 
   &:before{
     background-image: url(./rune.png);
+  }
+}
+
+.runeActive{
+  composes: label;
+  color: #333;
+
+  &:before{
+    background-image: url(./rune_h.png);
   }
 }
 
