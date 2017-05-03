@@ -1,6 +1,6 @@
 <template>
   <div class="user">
-    <p>I'm Runes.</p>
+    <p>I'm Inscription.</p>
   </div>
 </template>
 

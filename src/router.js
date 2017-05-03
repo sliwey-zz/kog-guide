@@ -1,10 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './app';
-import Home from './pages/home/home';
-import Hero from './pages/hero/hero';
-import Item from './pages/item/item';
-import Rune from './pages/rune/rune';
+import Hero from './pages/hero';
+import Item from './pages/item';
+import Inscription from './pages/inscription';
 
 Vue.use(VueRouter);
 
@@ -14,10 +13,10 @@ export default new VueRouter({
     {
       path: '/', component: App,
       children: [
-        { path: 'home', component: Home, alias: '' },
-        { path: 'heroes', component: Hero },
+        // { path: 'home', component: Home, alias: '' },
+        { path: 'heroes', component: Hero, alias: '' },
         { path: 'items', component: Item },
-        { path: 'runes', component: Rune }
+        { path: 'inscriptions', component: Inscription }
       ]
     }
   ]

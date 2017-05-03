@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const OpenPack = require('openpack');
 const ROOT_PATH = path.resolve(__dirname);
 const DEV_PATH = path.resolve(ROOT_PATH, 'src');
 const BUILD_PATH = path.resolve(ROOT_PATH, 'build');
@@ -25,7 +26,9 @@ module.exports = {
     historyApiFallback: true,
     compress: true,
     noInfo: true,
-    port: 8888
+    port: 8888,
+    host: '0.0.0.0',
+    disableHostCheck: true
   },
 
   module: {
@@ -91,7 +94,11 @@ module.exports = {
       inject: 'body'
     }),
 
-    new ExtractTextWebpackPlugin('style.css')
+    new ExtractTextWebpackPlugin('style.css'),
+
+    // new OpenPack({
+    //   lan: true
+    // })
   ]
 
 };

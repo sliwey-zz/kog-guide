@@ -1,16 +1,16 @@
 <template>
   <div>
-    <admin-header></admin-header>
+    <k-header></k-header>
     <div :class="$style.content">
       <router-view></router-view>
     </div>
-    <admin-footer></admin-footer>
+    <k-footer></k-footer>
   </div>
 </template>
 
 <script>
-import adminHeader from './components/header';
-import adminFooter from './components/footer';
+import kHeader from './components/header';
+import kFooter from './components/footer';
 
 export default {
   data () {
@@ -19,7 +19,7 @@ export default {
     }
   },
   components: {
-    adminHeader, adminFooter
+    kHeader, kFooter
   }
 }
 </script>

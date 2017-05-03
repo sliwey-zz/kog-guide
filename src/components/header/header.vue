@@ -1,6 +1,6 @@
 <template>
   <header :class="$style.header">
-    <h1 :class="$style.title">首页</h1>
+    <h1 :class="$style.title">{{ title }}</h1>
     <button :class="$style.btn" type="button" v-on:click="back()"></button>
   </header>
 </template>
@@ -12,9 +12,29 @@ export default {
 
     }
   },
+  computed: {
+    title() {
+      let title = '';
+
+      switch (this.$route.path) {
+        case '/':
+        case '/heroes':
+          title = '英雄';
+          break;
+        case '/items':
+          title = '局内道具';
+          break;
+        case '/inscriptions':
+          title = '铭文';
+          break;
+      }
+
+      return title;
+    }
+  },
   methods: {
     back() {
-
+      this.$router.back();
     }
   }
 }

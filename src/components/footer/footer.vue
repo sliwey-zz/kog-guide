@@ -1,9 +1,9 @@
 <template>
   <footer :class="$style.footer">
     <ul :class="$style.list">
-      <router-link :class="$style.listItem" tag="li" to="/heroes"><span :class="[isActive === '/heroes' ? $style.heroActive : $style.hero]">英雄</span></router-link>
+      <router-link :class="$style.listItem" tag="li" to="/heroes"><span :class="[isActive === '/heroes' || isActive === '/' ? $style.heroActive : $style.hero]">英雄</span></router-link>
       <router-link :class="$style.listItem" tag="li" to="/items"><span :class="[isActive === '/items' ? $style.itemActive : $style.item]">局内道具</span></router-link>
-      <router-link :class="$style.listItem" tag="li" to="/runes"><span :class="[isActive === '/runes' ? $style.runeActive : $style.rune]">符文</span></router-link>
+      <router-link :class="$style.listItem" tag="li" to="/inscriptions"><span :class="[isActive === '/inscriptions' ? $style.inscriptionActive : $style.inscription]">铭文</span></router-link>
     </ul>
   </footer>
 </template>
@@ -98,20 +98,20 @@ export default {
   }
 }
 
-.rune{
+.inscription{
   composes: label;
 
   &:before{
-    background-image: url(./rune.png);
+    background-image: url(./inscription.png);
   }
 }
 
-.runeActive{
+.inscriptionActive{
   composes: label;
   color: #333;
 
   &:before{
-    background-image: url(./rune_h.png);
+    background-image: url(./inscription_h.png);
   }
 }
 
