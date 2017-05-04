@@ -1,7 +1,7 @@
 <template>
   <header :class="$style.header">
     <h1 :class="$style.title">{{ title }}</h1>
-    <button :class="$style.btn" type="button" v-on:click="back()"></button>
+    <button :class="$style.btn" type="button" @click="back()"></button>
   </header>
 </template>
 

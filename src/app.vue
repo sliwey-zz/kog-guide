@@ -35,5 +35,7 @@ export default {
   height: 100%;
   padding-top: $height-header;
   padding-bottom: $height-footer;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 </style>
