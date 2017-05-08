@@ -34,12 +34,13 @@ export default {
 }
 
 .list{
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .item{
-  float: left;
-  margin: 0 5px 5px;
+  // float: left;
+  // margin: 0 5px 5px;
 }
 
 .img{
