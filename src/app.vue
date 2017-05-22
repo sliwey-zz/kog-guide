@@ -20,6 +20,9 @@ export default {
   },
   components: {
     kHeader, kFooter
+  },
+  methods: {
+
   }
 }
 </script>

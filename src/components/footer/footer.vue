@@ -47,6 +47,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .label{
